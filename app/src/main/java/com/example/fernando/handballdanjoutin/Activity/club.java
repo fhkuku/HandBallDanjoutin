@@ -16,6 +16,7 @@ public class club extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club);
         objetAction.objetclub = this;
+        this.setTitle("Club");
         objetAction.GetClub("club");
     }
 }

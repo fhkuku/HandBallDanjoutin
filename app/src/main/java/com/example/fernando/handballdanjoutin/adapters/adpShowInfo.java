@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.fernando.handballdanjoutin.R;
 import com.example.fernando.handballdanjoutin.classes.ClsElements;
 import com.example.fernando.handballdanjoutin.classes.ClsUser;
@@ -46,31 +44,17 @@ public class adpShowInfo extends RecyclerView.Adapter<adpShowInfo.MyViewHolder> 
 
 
         Picasso.with(objetElements.context).load(objetElements.mDataUser.get(i).getImg()).into(myViewHolder.img);
-        Picasso.with(objetElements.context).load(objetElements.mDataUser.get(i).getImg()).into(myViewHolder.img2);
+
         myViewHolder.txtnom.setText(objetElements.mDataUser.get(i).getNom());
-        myViewHolder.txtnom2.setText(objetElements.mDataUser.get(i).getNom());
-        myViewHolder.txtrol.setText(objetElements.mDataUser.get(i).getRol());
-        myViewHolder.f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myViewHolder.f.initialize(30, 1000, Color.DKGRAY, 2);
-                myViewHolder.f.toggle(false);
 
-                myViewHolder.img.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(objetElements.context, "Hola", Toast.LENGTH_LONG).show();
-                    }
-                });
+        myViewHolder.f.setOnClickListener(v -> {
+            Picasso.with(objetElements.context).load(objetElements.mDataUser.get(i).getImg()).into(myViewHolder.img2);
+            myViewHolder.txtnom2.setText(objetElements.mDataUser.get(i).getNom());
+            myViewHolder.txtrol.setText(objetElements.mDataUser.get(i).getRol());
+            myViewHolder.f.initialize(30, 1000, Color.DKGRAY, 0);
+            myViewHolder.f.toggle(false);
 
-                myViewHolder.img2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(objetElements.context, "Hola", Toast.LENGTH_LONG).show();
-                    }
-                });
 
-            }
         });
 
     }

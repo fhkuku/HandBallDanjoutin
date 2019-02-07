@@ -1,32 +1,23 @@
 package com.example.fernando.handballdanjoutin.Activity;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
 import com.example.fernando.handballdanjoutin.R;
-import com.ramotion.foldingcell.FoldingCell;
+import com.example.fernando.handballdanjoutin.classes.ClsAccionPhotos;
+import com.example.fernando.handballdanjoutin.classes.ClsElements;
 
 public class photos extends AppCompatActivity {
 
-
+    ClsAccionPhotos objetAccion = new ClsAccionPhotos();
+    ClsElements objetElement = new ClsElements();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photos);
-
-
-        final FoldingCell fc2 = findViewById(R.id.folding_cell2);
-        fc2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                fc2.initialize(50, 1000, Color.WHITE, 2);
-                fc2.toggle(false);
-            }
-        });
-
-
+        objetAccion.objetPhotos = this;
+        objetElement.collapsingToolbarLayout = findViewById(R.id.idcollapsing);
+        objetElement.collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.StyleAppBar);
+        objetElement.collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.StyleAppBar);
+        objetAccion.GetPhotos();
+        this.setTitle("Medias");
     }
 }

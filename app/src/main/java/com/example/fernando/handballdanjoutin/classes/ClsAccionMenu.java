@@ -36,7 +36,7 @@ public class ClsAccionMenu {
             objeElements.sliderLayout.setPresetTransformer(SliderLayout.Transformer.DepthPage);
             objeElements.sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
             objeElements.sliderLayout.setCustomAnimation(new DescriptionAnimation());
-            objeElements.sliderLayout.setDuration(3000);
+            objeElements.sliderLayout.setDuration(2000);
         } catch (Exception e) {
             e.printStackTrace();
         }

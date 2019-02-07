@@ -1,97 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.photos"
-    xml:folding-cell="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey"
+    android:backgroundTint="#fcfcfc"
+    tools:context=".activitys.menu">
 
-
-    <com.ramotion.foldingcell.FoldingCell xmlns:android="http://schemas.android.com/apk/res/android"
-
-        android:id="@+id/folding_cell2"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/idapplayout"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="8dp"
-
-        android:clipChildren="false"
-
-
-        android:clipToPadding="false"
-        app:layout_constraintTop_toTopOf="parent"
-        folding-cell:cameraHeight="50"
-        tools:layout_editor_absoluteX="0dp">
-        ​
-
-        <FrameLayout
-            android:id="@+id/cell_content_view2"
+        android:layout_height="300dp">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/idcollapsing"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_green_dark"
-            android:visibility="gone">
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="@string/app_name"
+            android:background="@drawable/header"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            >
 
-            <TextView
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/sliderphotos"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
+                app:layout_collapseMode="pin"
                 android:layout_height="match_parent">
+            </com.daimajia.slider.library.SliderLayout>
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView2"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:padding="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarphotos"
+                android:layout_width="match_parent"
+                app:titleTextColor="#fff"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                style="@style/ThemeOverlay.AppCompat.Light">
 
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView2">
+            </android.support.v7.widget.Toolbar>
 
 
-                </android.support.v7.widget.CardView>
-            </android.support.constraint.ConstraintLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
 
+    </android.support.design.widget.AppBarLayout>
 
-        </FrameLayout>
-        ​
-
-        <FrameLayout
-            android:id="@+id/cell_title_view2"
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <ScrollView
+            android:fillViewport="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@android:color/holo_blue_dark" />
-        </FrameLayout>
+                android:padding="5dp"
+                android:id="@+id/rcvphotos"
+                android:background="@color/grey"
+                android:layout_height="wrap_content">
 
-        ​
-    </com.ramotion.foldingcell.FoldingCell>
+            </android.support.v7.widget.RecyclerView>
+        </ScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
 
 
-    ​
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,6 +1,7 @@
 package com.example.fernando.handballdanjoutin.classes;
 
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.fernando.handballdanjoutin.Activity.show_info;
 import com.example.fernando.handballdanjoutin.R;
@@ -18,7 +19,8 @@ import cz.msebera.android.httpclient.Header;
 public class ClsAccionShowInfo {
     public show_info objetInfo;
     ClsElements objetelements = new ClsElements();
-
+    adpShowInfo adp;
+    RecyclerView recyclerView;
     public void GetShowInfo(String data, String id) {
 
         objetelements.asyncHttpClient = new AsyncHttpClient(true, 80, 443);
@@ -30,25 +32,21 @@ public class ClsAccionShowInfo {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 objetelements.list = new ArrayList();
                 try {
+
                     objetelements.array = new JSONArray(new String(responseBody));
                     for (int i = 0; i < objetelements.array.length(); i++) {
                         objetelements.row = objetelements.array.getJSONObject(i);
                         objetelements.list.add(new ClsUser(objetelements.row.getString("id"), objetelements.row.getString("nom"), objetelements.row.getString("img"), objetelements.row.getString("email"), objetelements.row.getString("idtype"), objetelements.row.getString("rol"), objetelements.row.getString("idclub")));
-                        objetelements.recyclerView = objetInfo.findViewById(R.id.rcvinfo);
-                        adpShowInfo adp = new adpShowInfo(objetInfo, objetelements.list);
-                        objetelements.recyclerView.setLayoutManager(new GridLayoutManager(objetInfo, 1));
-                        objetelements.recyclerView.setAdapter(adp);
-
-
+                        recyclerView = objetInfo.findViewById(R.id.rcvinfo);
+                        adp = new adpShowInfo(objetInfo, objetelements.list);
                     }
+                    recyclerView.setLayoutManager(new GridLayoutManager(objetInfo, 1));
+                    recyclerView.setAdapter(adp);
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 

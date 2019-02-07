@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.fernando.handballdanjoutin.Activity.Partanaires;
 import com.example.fernando.handballdanjoutin.Activity.club;
 import com.example.fernando.handballdanjoutin.Activity.contact;
+import com.example.fernando.handballdanjoutin.Activity.equipes;
+import com.example.fernando.handballdanjoutin.Activity.liens;
 import com.example.fernando.handballdanjoutin.Activity.menu;
 import com.example.fernando.handballdanjoutin.Activity.photos;
 import com.example.fernando.handballdanjoutin.Activity.videos;
@@ -73,5 +76,44 @@ public class ClsActivitys {
     }
 
 
+    public void Patenaires() {
+
+        try{
+            Intent intent = new Intent(c, Partanaires.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            c.startActivity(intent);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public void Liens(){
+        try{
+            Intent intent = new Intent(c, liens.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            c.startActivity(intent);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
+
+
+    }
+
+    public void Equipes(){
+
+        try{
+            Intent intent = new Intent(c, equipes.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            c.startActivity(intent);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 }
 

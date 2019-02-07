@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fernando.handballdanjoutin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +11,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.menu">
+        <activity android:theme="@style/AppThemeWithBar" android:name=".Activity.equipes"></activity>
+        <activity
+            android:name=".Activity.web_liens"
+            android:theme="@style/AppThemeWithBar" />
+        <activity
+            android:name=".Activity.liens"
+            android:theme="@style/AppThemeWithBar" />
+        <activity
+            android:name=".Activity.Partanaires"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithBar" />
+        <activity
+            android:name=".Activity.Show_info_salles"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.menu"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.photos" />
-        <activity android:name=".Activity.videos" />
+        <activity
+            android:name=".Activity.photos"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activity.videos"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Activity.club"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeWithBar" />
         <activity android:name=".Activity.contact" />
-        <activity android:name=".Activity.show_info"></activity>
+        <activity
+            android:name=".Activity.show_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeWithBar" />
     </application>
 
 </manifest>

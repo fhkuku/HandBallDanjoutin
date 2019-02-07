@@ -23,6 +23,9 @@ public class menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         objetActivitys.c = this;
         objeAccion.m = this;
+        objeElemet.collapsingToolbarLayout = findViewById(R.id.idcollapsing);
+        objeElemet.collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.StyleAppBar);
+        objeElemet.collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.StyleAppBar);
         objeAccion.GetSlidesMenu("photos");
 
     }
@@ -62,13 +65,34 @@ public class menu extends AppCompatActivity {
 
     public void Equipes(View v) {
         try {
-            Toast.makeText(this, "Pas disponible", Toast.LENGTH_SHORT).show();
+            objetActivitys.Equipes();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @Override
+    public void Partenaires(View v ){
+
+            objetActivitys.Patenaires();
+
+    }
+
+    public void Liens(View v){
+        try {
+            objetActivitys.Liens();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
+
+
+        @Override
     public void onBackPressed() {
         try {
             if (objeElemet.tempPremierClick + objeElemet.INTERVALE > System.currentTimeMillis()) {

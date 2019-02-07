@@ -1,8 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey"
+    android:backgroundTint="#fcfcfc"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.videos">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/idapplayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/idcollapsing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="@string/app_name"
+            android:background="@drawable/header"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            >
+
+            <android.support.v7.widget.Toolbar
+                app:layout_collapseMode="pin"
+                android:id="@+id/toolbarvideos"
+                android:layout_width="match_parent"
+                app:titleTextColor="#fff"
+                android:layout_height="?attr/actionBarSize"
+                style="@style/ThemeOverlay.AppCompat.Light">
+            </android.support.v7.widget.Toolbar>
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:id="@+id/idvideo"
+                android:layout_height="match_parent">
+            </com.google.android.youtube.player.YouTubePlayerView>
 
 
-</RelativeLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/rcvideos"
+            android:background="@color/grey"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
