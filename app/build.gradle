@@ -21,6 +21,13 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
+
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+
+        }
+    }
 }
 
 dependencies {
@@ -42,4 +49,5 @@ dependencies {
         exclude group: 'group_name', module: 'module_name'
     }
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
 }

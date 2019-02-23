@@ -25,8 +25,6 @@ public class web_liens extends AppCompatActivity {
             webView.loadUrl(url);
             WebSettings webSettings =  webView.getSettings();
             webSettings.setJavaScriptEnabled(true);
-
-
         }
 
 

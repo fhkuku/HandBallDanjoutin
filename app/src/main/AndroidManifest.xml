@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:theme="@style/AppThemeWithBar" android:name=".Activity.equipes"></activity>
+        <activity android:name=".Activity.pdf_liens"></activity>
+        <activity
+            android:name=".Activity.equipes"
+            android:theme="@style/AppThemeWithBar" />
         <activity
             android:name=".Activity.web_liens"
             android:theme="@style/AppThemeWithBar" />

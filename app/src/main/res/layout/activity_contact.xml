@@ -91,6 +91,7 @@
             android:id="@+id/info"
 
             >
+
             <TextView
                 android:id="@+id/textoo"
                 android:layout_width="wrap_content"
@@ -110,5 +111,23 @@
 
             />
 
+        <Button
+            android:id="@+id/btnEmail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/mapView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="152dp"
+            android:layout_marginEnd="174dp"
+            android:layout_marginBottom="104dp"
+            android:background="@drawable/btn_view"
+            android:text="Contact"
+            android:textColor="#ffff" />
+
     </RelativeLayout>
+
+
 </ScrollView>
